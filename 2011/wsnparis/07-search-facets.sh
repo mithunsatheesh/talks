@@ -113,7 +113,8 @@ curl 'localhost:9200/test/_search?search_type=count&pretty=1' -d '{
     }
 }'
 
-# Range Facet with custom value field
+# Range Facet with custom value field: note that here the custom fields values are 
+#considered while calculating the mean,max,min values in the result. rest are same.
 curl 'localhost:9200/test/_search?search_type=count&pretty=1' -d '{
     "query" : { "match_all" : {}},
     "facets" : {
